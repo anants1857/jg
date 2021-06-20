@@ -1,0 +1,318 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Snakes and Ladders Game Files - Crazy Games</title>
+    <link href="https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js" rel="preload" as="script" />
+    <link href="https://www.crazygames.com/game/snakes-and-ladders" rel="canonical" />
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="The game files for Snakes and Ladders, a free browser game on CrazyGames.com" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Accept-CH" content="DPR" />
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no, minimal-ui" />
+    <style id="pacman-styles">
+        /* purple background */
+        body {
+            background-image: linear-gradient(290deg, #3b2b73 55%, #6f2f93, #6f2f93);
+            background-position: center;
+            text-align: center;
+        }
+
+        /* for positioning of pacman loader */
+        body,
+        html {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes rotate_preloadpacman_half_up {
+            0% {
+                transform: rotate(270deg);
+            }
+
+            50% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(270deg);
+            }
+        }
+
+        @keyframes rotate_preloadpacman_half_down {
+            0% {
+                transform: rotate(90deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(90deg);
+            }
+        }
+
+        @keyframes preloadpacman-balls {
+            75% {
+                opacity: 0.7;
+            }
+
+            100% {
+                transform: translate(-100px, -6.25px);
+            }
+        }
+
+        .preloadpacman {
+            position: relative;
+        }
+
+        .preloadpacman>div:nth-child(2) {
+            animation: preloadpacman-balls 1s -0.99s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(3) {
+            animation: preloadpacman-balls 1s -0.66s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(4) {
+            animation: preloadpacman-balls 1s -0.33s infinite linear;
+        }
+
+        .preloadpacman>div:nth-child(5) {
+            animation: preloadpacman-balls 1s 0s infinite linear;
+        }
+
+        .preloadpacman>div:first-of-type {
+            width: 0px;
+            height: 0px;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #fff;
+            border-left: 25px solid #fff;
+            border-bottom: 25px solid #fff;
+            border-radius: 25px;
+            animation: rotate_preloadpacman_half_up 0.5s 0s infinite;
+            position: relative;
+            left: -30px;
+        }
+
+        .preloadpacman>div:nth-child(2) {
+            width: 0px;
+            height: 0px;
+            border-right: 25px solid transparent;
+            border-top: 25px solid #fff;
+            border-left: 25px solid #fff;
+            border-bottom: 25px solid #fff;
+            border-radius: 25px;
+            animation: rotate_preloadpacman_half_down 0.5s 0s infinite;
+            margin-top: -50px;
+            position: relative;
+            left: -30px;
+        }
+
+        .preloadpacman>div:nth-child(3),
+        .preloadpacman>div:nth-child(4),
+        .preloadpacman>div:nth-child(5),
+        .preloadpacman>div:nth-child(6) {
+            background-color: #fff;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            margin: 2px;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            transform: translate(0, -6.25px);
+            top: 25px;
+            left: 70px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="preloadpacman" id="pacman">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <script type="text/javascript">
+        function loadScript(url, async, callback) {
+            var head = document.head;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            if (async) {
+                script.async = true;
+            }
+            script.onreadystatechange = callback;
+            script.onload = callback;
+            head.appendChild(script);
+        }
+        var options = {
+            "loader": "iframe",
+            "loaderOptions": {
+                "sandbox": false,
+                "url": "https://files.crazygames.com/snakes-and-ladders/3/index.html"
+            },
+            "author": "Code This Lab",
+            "thumbnail": "https://images.crazygames.com/snakesandladders.png?auto=format,compress&q=75&cs=strip&w=360",
+            "gameName": "Snakes and Ladders",
+            "gameHttps": true,
+            "gameSlug": "snakes-and-ladders",
+            "gameStatus": "published",
+            "showAdOnExternal": "ALWAYS",
+            "showAdOnInternal": "DEFAULT",
+            "appStoreLink": null,
+            "playStoreLink": null,
+            "steamStoreLink": null,
+            "disableEmbedding": false,
+            "dollarRate": 0.8428611765499164,
+            "upvotes": 5974,
+            "downvotes": 1197,
+            "releaseDate": "2019-01-15",
+            "locale": "en_US",
+            "controls": {
+                "text": "<h3>Controls</h3>\nUse the left mouse button to roll the dice."
+            },
+            "videoThumbnail": "https://videos.crazygames.com/snakes-and-ladders.mp4",
+            "video": {
+                "original": null,
+                "sizes": [{
+                    "width": 180,
+                    "height": 111,
+                    "location": "https://videos.crazygames.com/snakes-and-ladders.mp4"
+                }]
+            },
+            "minTimeBetweenMidrollAdsInMs": 180000,
+            "minTimeBetweenRewardedAdsInMs": 5000,
+            "noMidrollAdInFirstMinutes": 3,
+            "noRewardedAdInFirstMinutes": 0,
+            "categoryEnSlug": "arcade",
+            "tagsEnSlugs": ["classic", "snake", "board", "html5"],
+            "fullscreen": "SUPPORTED",
+            "orientation": "LANDSCAPE",
+            "category": "Board",
+            "categoryLink": "https://www.crazygames.com/t/board",
+            "gameLink": "https://www.crazygames.com/game/snakes-and-ladders",
+            "alternativeGames": [{
+                "category": "Arcade",
+                "gameSlug": "goose-game",
+                "gameName": "Goose Game",
+                "rating": 8.7,
+                "thumbnail": "https://images.crazygames.com/games/goose-game/cover-1596195229993.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/goose-game/1/goose-game-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/goose-game",
+                "loader": "iframe"
+            }, {
+                "category": "Puzzle",
+                "gameSlug": "tic-tac-toe",
+                "gameName": "Tic Tac Toe Online",
+                "rating": 8.4,
+                "thumbnail": "https://images.crazygames.com/games/tic-tac-toe/thumb-1579168809142.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/tic-tac-toe/1/tic-tac-toe-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/tic-tac-toe",
+                "loader": "iframe"
+            }, {
+                "category": "Puzzle",
+                "gameSlug": "yahtzee-online",
+                "gameName": "Yahtzee Online",
+                "rating": 7.4,
+                "thumbnail": "https://images.crazygames.com/games/yahtzee-online/thumb-1576757931821.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/yahtzee-online/1/yahtzee-online-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/yahtzee-online",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "classic-bowling",
+                "gameName": "Classic Bowling",
+                "rating": 8.4,
+                "thumbnail": "https://images.crazygames.com/games/classic-bowling/cover-1611231337168.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/classic-bowling/1/classic-bowling-180x111.mp4",
+                "gameLink": "https://www.crazygames.com/game/classic-bowling",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "darts",
+                "gameName": "Darts",
+                "rating": 8.3,
+                "thumbnail": "https://images.crazygames.com/games/darts/cover-1623155685390.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/darts/1/darts-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/darts",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "duck-shooting",
+                "gameName": "Duck Shooting",
+                "rating": 8.1,
+                "thumbnail": "https://images.crazygames.com/games/duck-shooting/cover-1610534462250.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/duck-shooting/1/duck-shooting-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/duck-shooting",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "reversi-online",
+                "gameName": "Reversi Online",
+                "rating": 8.3,
+                "thumbnail": "https://images.crazygames.com/games/reversi-online/thumb-1558173674320.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/reversi-online/1/reversi-online-thumbnail.mp4",
+                "gameLink": "https://www.crazygames.com/game/reversi-online",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "classic-backgammon",
+                "gameName": "Backgammon Online",
+                "rating": 7.3,
+                "thumbnail": "https://images.crazygames.com/games/classic-backgammon/thumb-1552121461783.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/classic-backgammon-1552120145061.mp4",
+                "gameLink": "https://www.crazygames.com/game/classic-backgammon",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "master-chess",
+                "gameName": "Master Chess",
+                "rating": 8.4,
+                "thumbnail": "https://images.crazygames.com/masterchess.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/master-chess.mp4",
+                "gameLink": "https://www.crazygames.com/game/master-chess",
+                "loader": "iframe"
+            }, {
+                "category": "Arcade",
+                "gameSlug": "domino-block-multiplayer",
+                "gameName": "Domino Block Multiplayer",
+                "rating": 8.3,
+                "thumbnail": "https://images.crazygames.com/games/domino-block-multiplayer/thumb-1551302574716.png?auto=format,compress&q=75&cs=strip&w=360",
+                "videoThumbnail": "https://videos.crazygames.com/domino-block-multiplayer-1551302038250.mp4",
+                "gameLink": "https://www.crazygames.com/game/domino-block-multiplayer",
+                "loader": "iframe"
+            }],
+            "country": "IN",
+            "domainHasNoCMP": false
+        };
+        var SDK_READY = false;
+        var GF_READY = false;
+        var GF_LOAD_CALLED = false;
+        loadScript("https://gameframe.crazygames.com/crazygames-gameframe-v1.bundle.js", true, function() {
+            Crazygames.load(options).then(function() {
+                var pacmanWrapper = document.getElementById('pacman');
+                var pacmanStyles = document.getElementById('pacman-styles');
+
+                if (pacmanWrapper && pacmanStyles) {
+                    pacmanWrapper.remove();
+                    pacmanStyles.remove();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
